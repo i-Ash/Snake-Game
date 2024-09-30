@@ -1,5 +1,6 @@
 function init(){
     canvas = document.querySelector('#display');
+    score = document.querySelector('#score');
     //width
     w = canvas.width = 1000;
     //height
@@ -8,7 +9,7 @@ function init(){
     pen = canvas.getContext('2d');
     cellSize = 66;
     game_over = false;
-    score = 5;
+    UpdatedScore = 5;
     food = getRandomFood();
         snake = {
         init_len:4,
@@ -34,7 +35,8 @@ function init(){
 
             if(headX == food.x && headY == food.y){
                 food = getRandomFood();
-                score++;
+                UpdatedScore++;
+                score.innerText = UpdatedScore;
             }
             else{
                 this.cells.pop();
@@ -103,7 +105,7 @@ function draw(){
     pen.fillRect(food.x*cellSize,food.y*cellSize,cellSize,cellSize);
     pen.fillStyle = "black";
     pen.font = "20px roboto";
-    pen.fillText(score,30,30);
+    // pen.fillText(score,30,30);
 }
 
 function update(){

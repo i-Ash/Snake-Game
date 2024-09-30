@@ -9,10 +9,30 @@
             background-image: url("images/bg.jpg");
             border: 20px solid green;
         }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        #display-score{
+            position: absolute;
+            top:10px;
+            left:10px;
+        }
+        span{
+            font-size:xx-large;
+            font-family:sans-serif;
+            font-weight:bolder;
+        }
     </style>
 </head>
 <body>
     <div>
+        <div id="display-score">
+            <span>Score: </span>
+            <span id="score"> 5 </span>
+        </div>
         <canvas id="display"></canvas>
     </div>
     <script src="snake.js"></script>
